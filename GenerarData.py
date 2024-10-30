@@ -70,7 +70,7 @@ df = pd.DataFrame(data)
 data_dict = df.to_dict(orient='records')
 
 # Guardar en un archivo JSON
-with open('./data/entrada.json', 'w') as f:
+with open('./data/datosAutomaticos.json', 'w') as f:
     json.dump(data_dict, f, indent=4)
 
 print("Datos guardados en entrada.json")
