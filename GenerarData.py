@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import json
 
-cantidad = 15
+cantidad = 30
 
 # Definir los rangos para cada campo
 age_range = (18, 59)
@@ -37,11 +37,11 @@ while len(data) < cantidad:
     company_tenure = np.random.randint(company_tenure_range[0], company_tenure_range[1] + 1)
     
     # Validar que la diferencia entre Age y Years_at_Company, y Age y Company_Tenure no sea menor a 15 años
-    if age - years_at_company >= 15 and age - company_tenure >= 15 and years_at_company - company_tenure >= 0:
+    if age - years_at_company >= 15 and age - company_tenure >= 15 and company_tenure - years_at_company >= 0:
         data.append({
             "Age": age,
             "Gender": np.random.randint(gender_range[0], gender_range[1] + 1),
-            "Years_at_Company": company_tenure,
+            "Years_at_Company": years_at_company,
             "Job_Role": np.random.randint(job_role_range[0], job_role_range[1] + 1),
             "Monthly_Income": np.random.randint(monthly_income_range[0], monthly_income_range[1] + 1),
             "Work_Life_Balance": np.random.randint(work_life_balance_range[0], work_life_balance_range[1] + 1),
